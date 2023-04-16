@@ -27,6 +27,8 @@ int is_n(char *str)
     int i;
 
     i = 0;
+    if(str == NULL)
+        return 0;
     if (str[i] == '-')
         i++;
     while (str[i] && str[i] != 32)
@@ -36,6 +38,21 @@ int is_n(char *str)
         i++;
     }
     return (1);
+}
+int if_more_n(char *s)
+{
+    int i;
+
+    i = 0;
+    if(s[i] != '-')
+        return 1;
+    while(s[i])
+    {
+        if(s[i] != '-' && s[i] != 'n')
+            return 1;
+        i++;
+    }
+    return 0;
 }
 void    handle_echo(t_cmd_line *head)
 {
@@ -50,11 +67,20 @@ void    handle_echo(t_cmd_line *head)
         ft_putstr("\n");
         return ;
     }
-
     while (is_n(head->str[i]))
     {
         f = 1;
+        if(if_more_n(head->str[i]))
+        {
+            // f = 0;
+            break;
+        }
         i++;
+    }
+    if(i > 2)
+    {
+        printf("pd");
+        f = 1;
     }
     len = count_len_of_str(head->str);
     while (i < len )

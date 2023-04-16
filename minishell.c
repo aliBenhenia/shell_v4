@@ -43,9 +43,9 @@ void	body(char *line, char **env,t_export **export_list,t_env_list **env_list)
 	
 	
 		//////////////////////////////////////////////
-		int j = 0;
-		while (cmd_line && cmd_line->str[j])
-			printf("|%s|\n", cmd_line->str[j++]);
+		// int j = 0;
+		// while (cmd_line && cmd_line->str[j])
+		// 	printf("|%s|\n", cmd_line->str[j++]);
 		// if (cmd_line->redirections)
 		// {
 		// 	while (cmd_line->redirections)

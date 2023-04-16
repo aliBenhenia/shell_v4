@@ -312,4 +312,5 @@ void    do_export(char *str[],t_export **data, t_env_list **env_list)
 			error_od_export(str[i]);
 		i++;
 	}
+	 sort(data);
 }
